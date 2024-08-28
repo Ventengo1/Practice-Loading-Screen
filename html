@@ -1,144 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loading Screen</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      background-color: #e0f2f7;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #e0f2f7;
+        }
 
-    .loading-container {
-      width: 200px;
-      height: 200px;
-      border: 10px solid #333;
-      border-radius: 50%;
-      border-top-color: #f90;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
+        .loading-container {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #333;
+            border-radius: 50%;
+            border-top-color: #f90;
+            animation: spin 2s ease-in-out infinite; /* Adjust duration and timing function */
+            margin: 0 auto;
+        }
 
-    @keyframes spin {
-      from {
-        transform: rotate(0deg);
-      }
-      to {
-        transform: rotate(360deg);
-      }
-    }
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
 
-    .loading-text {
-      font-size: 25px;
-      position: relative;
-      top: -50%;
-      transform: translateY(50%);
-    }
+        .loading-text {
+            font-size: 25px;
+            position: relative;
+            top: -50%;
+            transform: translateY(50%);
+        }
 
-    .loading-text1 {
-      font-size: 18px;
-      position: relative;
-      top: -20px;
-      transform: translateY(50%);
-      margin: 0 auto;
-    }
+        .loading-text1 {
+            font-size: 18px;
+            position: relative;
+            top: -20px;
+            transform: translateY(50%);
+            margin: 0 auto;
+        }
 
-    .image-container {
-      position: absolute;
-      top: 100px; /* Adjust for vertical position */
-      left: 0;
-      width: 100px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .image-container {
+            position: absolute;
+            top: 100px; /* Adjust for vertical position */
+            left: 0;
+            width: 100px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .right-image-container {
-      position: absolute;
-      top: 100px; /* Adjust for vertical position */
-      right: 0;
-      width: 100px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .right-image-container {
+            position: absolute;
+            top: 100px; /* Adjust for vertical position */
+            right: 0;
+            width: 100px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .image-container img, .right-image-container img {
-      width: 50px;
-      height: 50px;
-      transform: rotate(var(--rotate));
-    }
+        .image-container img, .right-image-container img {
+            width: 50px;
+            height: 50px;
+            transform: rotate(var(--rotate));
+        }
 
-    .image-container img:first-child, .right-image-container img:first-child {
-      --rotate: -15deg;
-    }
+        .image-container img:first-child, .right-image-container img:first-child {
+            --rotate: -15deg;
+        }
 
-    .image-container img:nth-child(2), .right-image-container img:nth-child(2) {
-      --rotate: 10deg;
-    }
+        .image-container img:nth-child(2), .right-image-container img:nth-child(2) {
+            --rotate: 10deg;
+        }
 
-    .bottom-image-container {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .bottom-image-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .bottom-image-container img {
-      width: 50px;
-      height: 50px;
-      transform: rotate(var(--rotate));
-    }
+        .bottom-image-container img {
+            width: 50px;
+            height: 50px;
+            transform: rotate(var(--rotate));
+        }
 
-    .bottom-image-container img:first-child {
-      --rotate: -15deg;
-    }
+        .bottom-image-container img:first-child {
+            --rotate: -15deg;
+        }
 
-    .bottom-image-container img:nth-child(2) {
-      --rotate: 10deg;
-    }
+        .bottom-image-container img:nth-child(2) {
+            --rotate: 10deg;
+        }
 
-    .bottom-image-container img:nth-child(3) {
-      --rotate: -25deg;
-    }
+        .bottom-image-container img:nth-child(3) {
+            --rotate: -25deg;
+        }
 
-    .bottom-image-container img:last-child {
-      --rotate: 5deg;
-    }
-  </style>
+        .bottom-image-container img:last-child {
+            --rotate: 5deg;
+        }
+    </style>
 </head>
 <body>
-  <div class="image-container">
-    <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Huckleberry-Hound.png" alt="Huckleberry Hound">
-    <img src="https://www.dogster.com/wp-content/uploads/2024/02/Courage-The-Cowardly-Dog.jpeg.webp" alt="Courage">
-  </div>
-  <div class="right-image-container">
-    <img src="https://www.dogster.com/wp-content/uploads/2024/02/Clifford-the-Big-Red-Dog.jpeg.webp" alt="Clifford">
-    <img src="https://www.dogster.com/wp-content/uploads/2024/02/Spike.jpg.webp" alt="Spike">
-  </div>
-  <div class="loading-container">
-    <p class="loading-text">Loading...</p>
-  </div>
-  <p class="loading-text1">In the meantime search up cute dog pics</br> or... go through the webs darkest secrets</p>
-  <div class="bottom-image-container">
-    <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/dug_-_up_600x600.jpg" alt="Dug">
-    <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/The-Secret-Life-of-Pets-2-Max_600x600.jpg?v=1681391807" alt="Max">
-    <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/bluey_600x600.png?v=1681391500" alt="Bluey">
-    <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/Pluto_600x600.gif?v=1681391693" alt="Pluto">
-  </div>
+    <div class="image-container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Huckleberry-Hound.png" alt="Huckleberry Hound">
+        <img src="https://www.dogster.com/wp-content/uploads/2024/02/Courage-The-Cowardly-Dog.jpeg.webp" alt="Courage">
+    </div>
+    <div class="right-image-container">
+        <img src="https://www.dogster.com/wp-content/uploads/2024/02/Clifford-the-Big-Red-Dog.jpeg.webp" alt="Clifford">
+        <img src="https://www.dogster.com/wp-content/uploads/2024/02/Spike.jpg.webp" alt="Spike">
+    </div>
+    <div class="loading-container">
+        <p class="loading-text">Loading...</p>
+    </div>
+    <p class="loading-text1">In the meantime search up cute dog pics<br> or... go through the webs darkest secrets <br> <br> "Dogs do speak, but ony to those who are willing to listen" - Orhan Pamuk</p>
+    <div class="bottom-image-container">
+        <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/dug_-_up_600x600.jpg" alt="Dug">
+        <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/The-Secret-Life-of-Pets-2-Max_600x600.jpg?v=1681391807" alt="Max">
+        <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/bluey_600x600.png?v=1681391500" alt="Bluey">
+        <img src="https://cdn.shopify.com/s/files/1/0525/2500/7030/files/Pluto_600x600.gif?v=1681391693" alt="Pluto">
+    </div>
 </body>
 </html>
